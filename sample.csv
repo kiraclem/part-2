@@ -1,0 +1,6 @@
+size,name,price,flavor,frosting,sprinkles,filling
+regular,vanilla cupcake,3.29,vanilla,vanilla,"['rainbow', 'vanilla', 'chocolate']",cream
+regular,chocolate cupcake,3.29,chocolate,chocolate,[],chocolate
+regular,Cake cupcake,3.59,vanilla,cake frosting,[],none
+regular,cookies and cream,3.59,chocolate,vanilla oreo,[],oreo cream
+mini,mini vanilla cupcake,2.29,vanilla,vanilla,[],cream
