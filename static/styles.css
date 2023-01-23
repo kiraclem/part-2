@@ -25,7 +25,7 @@ section {
     justify-content: space-around;
 }
 
-p {
+a {
     font-size: larger;
     color: rgb(215, 37, 90);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -35,9 +35,48 @@ h1 {
     font-family:cursive;
     color: rgb(212, 67, 110);
 }
+h3 {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(212, 67, 110);
+}
+h4 {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(212, 67, 110);
+}
 
 div {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.spacearound {
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    align-items: flex-start;
+    background-color: rgb(180, 223, 223);
+    width: 1000px;
+    height: 1500px;
+}
+
+.collum {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+ul {
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 0.01em;
+}
+
+button {
+    background-color:  rgb(212, 67, 110);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }

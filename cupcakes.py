@@ -50,7 +50,7 @@ def add_to_dictionary(self):
 #         return self.price * quantity
 
 class Cupcake():
-    size = 'regular'
+    size = 'medium'
     def __init__ (self, name, price, flavor, frosting, filling):
         self.name = name
         self.price = price
@@ -74,23 +74,27 @@ class Large(Cupcake):
 
 # sprinkles and gluten_free are boolen values. aka True or False.
 
-cupcake_1 = Cupcake("vanilla cupcake", 3.29, "vanilla", "vanilla", "cream")
+cupcake_1 = Cupcake("vanilla", 3.29, "vanilla", "vanilla", "cream")
 cupcake_1.add_sprinkles('rainbow', 'vanilla', 'chocolate')
-cupcake_2 = Cupcake("chocolate cupcake", 3.29, "chocolate", "chocolate", "chocolate")
-cupcake_3 = Cupcake("Cake cupcake", 3.59, "vanilla", "cake frosting","none")
-cupcake_4 = Cupcake("cookies and cream", 3.59, "chocolate", "vanilla oreo", "oreo cream")
+cupcake_2 = Cupcake("chocolate", 3.29, "chocolate", "chocolate", "chocolate")
+cupcake_3 = Cupcake("Cake", 3.59, "vanilla", "cake frosting","none")
+cupcake_4 = Cupcake("Cookies and Cream", 3.59, "chocolate", "vanilla oreo", "oreo cream")
+cupcake_5 = Cupcake("Strawberry",3.59 ,"Stawberry","Vanilla","none")
+cupcake_5.add_sprinkles('red', 'white')
 
+if __name__ == "__main__":
+    print(cupcake_4.flavor)
 
-print(cupcake_4.flavor)
+    print('===================')
 
-print('===================')
-
-mini_cupcake_1 = Mini("mini vanilla cupcake", 2.29, "vanilla", "vanilla", "cream")
-print(mini_cupcake_1.filling)
-print(mini_cupcake_1.frosting)
-print(mini_cupcake_1.name)
-
-print('===================')
+mini_cupcake_1 = Mini("vanilla", 2.29, "vanilla", "vanilla", "cream")
+mini_cupcake_2 = Mini("Strawberry", 2.59 ,"Stawberry","Vanilla","none")
+mini_cupcake_2.add_sprinkles('red', 'white')
+if __name__ == "__main__":
+    print(mini_cupcake_1.filling)
+    print(mini_cupcake_1.frosting)
+    print(mini_cupcake_1.name)
+    print('===================')
 
 #showing how to get rid of class attribute from Parent class. 
 # just dont specify class attribute
@@ -119,15 +123,19 @@ cupcake_list = [
     cupcake_2,
     cupcake_3,
     cupcake_4,
-    mini_cupcake_1
+    cupcake_5,
+    mini_cupcake_1,
+    mini_cupcake_2
 ]
 
-def prettier_sprinkle(self):
-    for sprinkle in self.sprinkles:
-        print(sprinkle)
+
+if __name__ == "__main__":
+    def prettier_sprinkle(self):
+        for sprinkle in self.sprinkles:
+            print(sprinkle)
 
 
-sprinkle = prettier_sprinkle(cupcake_1)
+    sprinkle = prettier_sprinkle(cupcake_1)
 
 def write_new_csv(file, cupcakes):
     with open(file, "w", newline="\n") as csvfile:
@@ -145,7 +153,7 @@ def write_new_csv(file, cupcakes):
 
 # REWRITES FILE!!
 write_new_csv("sample.csv", cupcake_list)
-
+write_new_csv("display.csv", cupcake_list)
 
 
 def add_to_csv(file, cupcakes):
@@ -168,3 +176,25 @@ def add_to_csv(file, cupcakes):
 # large,Red Velvet,3.99,Red Velvet,Cream Cheese,[],
 # regular,Triple Chocolate,2.99,Chocolate,Chocolate,[],Chocolate
 # regular,Strawberry,2.99,Stawberry,Vanilla,[],
+
+def read_cupcake_file(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        reader = list(reader)
+        return reader
+
+def find_a_cupcake(file, name):
+    for cupcake in read_cupcake_file("display.csv"):
+        if cupcake["name"] == name:
+            return cupcake
+
+
+        return None
+
+
+def add_to_order(file, cupcake):
+    with open(file, "a", newline="\n") as csvfile:
+        fieldnames = ["size","name","price","flavor","frosting","sprinkles","filling"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writerow(cupcake)
+
