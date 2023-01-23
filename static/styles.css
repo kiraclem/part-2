@@ -57,9 +57,9 @@ div {
 
 .box {
     align-items: flex-start;
-    background-color: rgb(180, 223, 223);
-    width: 1000px;
-    height: 1500px;
+    background-color: antiquewhite;
+    width: 10px;
+    height: 40px;
 }
 
 .collum {

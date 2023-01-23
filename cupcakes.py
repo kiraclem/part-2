@@ -189,9 +189,6 @@ def find_a_cupcake(file, name):
             return cupcake
 
 
-        return None
-
-
 def add_to_order(file, cupcake):
     with open(file, "a", newline="\n") as csvfile:
         fieldnames = ["size","name","price","flavor","frosting","sprinkles","filling"]

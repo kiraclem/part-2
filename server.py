@@ -9,11 +9,14 @@ def home():
 
 @app.route('/orders')
 def orders():
-    return render_template('orders.html')
+    return render_template('orders.html', cupcakes = read_cupcake_file("orders.csv"))
 
 @app.route('/cupcakes')
 def cupcakes():
     return render_template('cupcakes.html', cupcakes = read_cupcake_file("display.csv"))
+
+# @app.route('/view_cupcake')
+# def veiw_cupcake():
 
 @app.route('/add_cupcake/<name>')
 def add_cupcake(name):

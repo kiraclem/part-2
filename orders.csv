@@ -1,1 +1,3 @@
+size,name,price,flavor,frosting,sprinkles,filling
 medium,vanilla,3.29,vanilla,vanilla,"['rainbow', 'vanilla', 'chocolate']",cream
+medium,Cookies and Cream,3.59,chocolate,vanilla oreo,[],oreo cream
