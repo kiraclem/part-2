@@ -5,8 +5,8 @@
     <div class="collum">
         {% for cupcake in cupcakes %}
         <div class = "spacearound">
-            <h4>{{ cupcake["size"] }}  </h4>
-            <h3>{{ cupcake["name"] }} Cupcake </h3>
+            <h4>{{ cupcake["size"].capitalize() }}  </h4>
+            <h3>{{ cupcake["name"].capitalize() }} Cupcake </h3>
             <h4>{{ cupcake["price"] }} </h4>
         </div>
         <div class = "spacearound">

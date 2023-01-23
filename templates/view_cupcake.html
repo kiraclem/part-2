@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div>
+    <div class="collum">
+        {% for item in cupcake %}
+        <div class = "spacearound">
+            <h2>{{ item["name"].capitalize() }} Cupcake </h2>
+            <h4>Size {{ item["size"].capitalize() }}  </h4>
+            <h4>Price: {{ item["price"] }} </h4>
+        </div>
+        <div class = "spacearound">
+            <h4>Flavor: {{ item["flavor"]  }}  </h4>
+            <h4>Filling: {{ item["filling"]  }}  </h4>
+            <h4>sprinkles: {{ item["sprinkles"]  }}  </h4>
+        </div>
+        <div class="box"></div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

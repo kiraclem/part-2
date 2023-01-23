@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect
-from cupcakes import read_cupcake_file, find_a_cupcake, add_to_order
+from cupcakes import read_cupcake_file, find_a_cupcake, add_to_order, view_a_cupcake
 
 app = Flask(__name__)
 
@@ -15,12 +15,20 @@ def orders():
 def cupcakes():
     return render_template('cupcakes.html', cupcakes = read_cupcake_file("display.csv"))
 
-# @app.route('/view_cupcake')
-# def veiw_cupcake():
+@app.route('/view_cupcake/<name>')
+def view_cupcake(name):
+    cupcake = find_a_cupcake("display.csv", name)
+
+    if cupcake:
+        view_a_cupcake("view.csv", cupcake)
+        return render_template('view_cupcake.html', cupcake = read_cupcake_file("view.csv"))
+
+    else:
+        "Sorry! That cupcake was not found!"
 
 @app.route('/add_cupcake/<name>')
 def add_cupcake(name):
-    cupcake = find_a_cupcake("cupcakes.csv", name)
+    cupcake = find_a_cupcake("display.csv", name)
     
     if cupcake:
         add_to_order("orders.csv", cupcake)

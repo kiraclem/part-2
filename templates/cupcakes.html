@@ -9,7 +9,9 @@
         {% for cupcake in cupcakes %}
         <div class = "spacearound">
             <h4>{{ cupcake["size"].capitalize() }}  </h4>
-            <h3>{{ cupcake["name"].capitalize() }} Cupcake </h3>
+            <a href="{{ url_for('view_cupcake', name=cupcake['name']) }}">
+                <h3>{{ cupcake["name"].capitalize() }} Cupcake </h3>
+            </a>
             <h4>{{ cupcake["price"] }} </h4>
             <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
                 <button>Add to Cart</button>

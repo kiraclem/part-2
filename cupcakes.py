@@ -87,8 +87,8 @@ if __name__ == "__main__":
 
     print('===================')
 
-mini_cupcake_1 = Mini("vanilla", 2.29, "vanilla", "vanilla", "cream")
-mini_cupcake_2 = Mini("Strawberry", 2.59 ,"Stawberry","Vanilla","none")
+mini_cupcake_1 = Mini("vanilla m", 2.29, "vanilla", "vanilla", "cream")
+mini_cupcake_2 = Mini("Strawberry m", 2.59 ,"Stawberry","Vanilla","none")
 mini_cupcake_2.add_sprinkles('red', 'white')
 if __name__ == "__main__":
     print(mini_cupcake_1.filling)
@@ -195,3 +195,9 @@ def add_to_order(file, cupcake):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writerow(cupcake)
 
+def view_a_cupcake(file, cupcake):
+    with open(file, "w", newline="\n") as csvfile:
+        fieldnames = ["size","name","price","flavor","frosting","sprinkles","filling"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow(cupcake)
