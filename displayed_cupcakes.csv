@@ -1,8 +1,0 @@
-size,name,price,flavor,frosting,sprinkles,filling
-regular,vanilla,3.29,vanilla,vanilla,"['rainbow', 'vanilla', 'chocolate']",cream
-regular,chocolate,3.29,chocolate,chocolate,[],chocolate
-regular,Cake,3.59,vanilla,cake frosting,[],none
-regular,cookies and Cream,3.59,chocolate,vanilla oreo,[],oreo cream
-regular,Strawberry,3.59,Stawberry,Vanilla,"['red', 'white']",none
-mini,vanilla m,2.29,vanilla,vanilla,[],cream
-mini,Strawberry m,2.59,Stawberry,Vanilla,"['red', 'white']",none
